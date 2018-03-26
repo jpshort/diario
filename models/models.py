@@ -11,6 +11,7 @@ class AccountInvoice(models.Model):
     def _cambiar_diario(self):
         
         id_aux = self.journal_id
+        codigo = -1
 
         for ids in self.partner_id:
             codigo = ids.id
@@ -24,17 +25,17 @@ class AccountInvoice(models.Model):
             journals = self.env['account.journal']
 
             if self.efectivo:
-                id_needed = journals.search([('efectivo', '=', 'True')]).id  
+                id_needed = journals.search([('efectivo', '=', 'True'),('type','=','sale')]).id  
                 if not id_needed:
                     id_needed = id_aux
 
             else:                        
-                id_needed = journals.search([('default_journal', '=', 'True')]).id	   
+                id_needed = journals.search([('default_journal', '=', 'True'),('type','=','sale')]).id	   
                 if not id_needed:
                     id_needed = id_aux
         else:
             journals = self.env['account.journal']
-            id_needed = journals.search([('default_journal', '=', 'True')]).id	   
+            id_needed = journals.search([('default_journal', '=', 'True'),('type','=','sale')]).id	   
             if not id_needed:
                 id_needed = id_aux
              
