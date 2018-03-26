@@ -21,7 +21,7 @@
                 </xpath>
             </field>
         </record>
-        <record id="cambio_partner_view" model="ir.ui.view">
+     <!--   <record id="cambio_partner_view" model="ir.ui.view">
             <field name="name">diario.partner.form.view</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
@@ -30,6 +30,6 @@
                     <field name="sale_fiscal_type" string="Tipo Comprobante"/>
                 </xpath>
             </field>
-        </record>
+        </record> -->
     </data>
 </odoo>

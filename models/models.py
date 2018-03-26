@@ -50,9 +50,10 @@ class AccountJournal(models.Model):
     efectivo = fields.Boolean(string="Efectivo",default=False)
     default_journal = fields.Boolean(string="Diario por Defecto",default= False)    
    
-
+"""
 class Partner(models.Model):
     _name = 'res.partner'
     _inherit = 'res.partner'
 
     sale_fiscal_type = fields.Char(default = 'final')
+"""
