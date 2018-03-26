@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <record id="cambio_diario_form_view" model="ir.ui.view">
+            <field name="name">diario.account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/field[@name='payment_term_id']" position="after">
+                    <field name="efectivo" string="Efectivo"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="cambio_journal_form_view" model="ir.ui.view">
+            <field name="name">diario.account.journal.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/field[@name='default_credit_account_id']" position="after">
+                    <field name="efectivo" string="Efectivo"/>
+                    <field name="default_journal" string="Diario por Defecto"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="cambio_partner_view" model="ir.ui.view">
+            <field name="name">diario.partner.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/field[@name='phone']" position="after">
+                    <field name="sale_fiscal_type" string="Tipo Comprobante"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
